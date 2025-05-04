@@ -1,1 +1,1 @@
-const card = [];
+export const card = [];

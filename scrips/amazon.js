@@ -1,3 +1,5 @@
+import {card} from '../data/card.js';
+
 let productsHTML = '';
 
 products.forEach((product) => {
