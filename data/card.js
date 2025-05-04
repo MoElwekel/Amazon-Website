@@ -1,4 +1,4 @@
-export let card = [{
+export let card =  JSON.parse(localStorage.getItem('card')) || [{
   productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
   quantity: 2
 },{
@@ -6,6 +6,9 @@ export let card = [{
   quantity: 1
 }];
 
+function saveToStorage() {
+  localStorage.setItem('card', JSON.stringify(card));
+};
 
 export function addToCart(productId) {
   let matchingItem;
@@ -24,6 +27,9 @@ export function addToCart(productId) {
       quantity: 1,
     });
   }
+
+
+  saveToStorage();
 };
 
 
@@ -37,6 +43,7 @@ export function removeFromCart(productId) {
   });
 
   card = newCard;
+  saveToStorage();
 };
 
 
