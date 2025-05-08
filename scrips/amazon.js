@@ -31,7 +31,7 @@ products.forEach((product) => {
         $${formatCurrency(product.priceCents)}
       </div>
 
-      <div class="product-quantity-container">
+      <div class="product-quantity-container js-product-quantity-container">
         <select>
           <option selected value="1">1</option>
           <option value="2">2</option>
@@ -48,7 +48,7 @@ products.forEach((product) => {
 
       <div class="product-spacer"></div>
 
-      <div class="added-to-cart">
+      <div class="added-to-cart js-added-to-cart-${product.id}">
         <img src="images/icons/checkmark.png">
         Added
       </div>
@@ -72,11 +72,28 @@ function ubdateCartQuantity() {
     .innerHTML = cartQuantity;
 };
 
+let timer =0;
+function displayAddedToCart(productId) {
+  const addedToCart = document.querySelector(`.js-added-to-cart-${productId}`);
+  // If the timer is already set, clear it
+  // before setting a new one. This prevents the opacity from being set to 0
+  if (timer) {
+    clearTimeout(timer);
+  };
+  addedToCart.style.opacity = '1';
+  timer = setTimeout(() => {
+    addedToCart.style.opacity = '0';
+    timer = 0;
+  }, 2000);
+};
+
+
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', (event) => {
       const productId = button.dataset.productId;
-
+      
+      displayAddedToCart(productId);
       addToCart(productId);
       ubdateCartQuantity();
 
