@@ -49,6 +49,19 @@ export function removeFromCart(productId) {
   saveToStorage();
 };
 
+//function to ubdate the delivery option in the card 
+export function updateDeliveryOption(productId, deliveryOptionId) {
+  let matchingItem;
+  // Check if the product is already in the cart
+  // If it is, increase the quantity by 1
+  card.forEach((cardItem) => {
+    if (cardItem.productId === productId) {
+      matchingItem = cardItem;
+    }
+  });
 
+  matchingItem.deliveryOptionId = deliveryOptionId;
+  saveToStorage();
+};
 
 
