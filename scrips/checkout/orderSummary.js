@@ -1,9 +1,9 @@
 import {card , removeFromCart, updateDeliveryOption} from '../../data/card.js';
-import {products} from '../../data/products.js';
+import {products, getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import {deliveryOptions} from '../../data/deleveryObtions.js';
+import {deliveryOptions, getDeliveryOption} from '../../data/deleveryObtions.js';
 
 
 hello();
@@ -21,25 +21,14 @@ export function renderOrderSummury(){
   // Loop through the cart array and generate HTML for each product
   card.forEach((cardItem) => {
     const productId = cardItem.productId;
-    
-    let matchingProduct;
-    
+  
     // Find the matching product in the products array
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-
-    });
+    const matchingProduct =getProduct(productId);
 
     // Find the delivery option that matches the deliveryOptionId
     const deliveryOptionId = cardItem.deliveryOptionId;
-    let deliveryOption;
-    deliveryOptions.forEach((option) => {
-      if (option.id === Number(deliveryOptionId)) {
-        deliveryOption = option;
-      }
-    });
+    const deliveryOption = getDeliveryOption( deliveryOptionId);
+    
     // Calculate the delivery date
     const today = dayjs();
     const deliverydate = today.add(deliveryOption.deliveryDays, 'day');
