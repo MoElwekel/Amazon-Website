@@ -4,14 +4,8 @@ import {formatCurrency} from '../utils/money.js';
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions, getDeliveryOption} from '../../data/deleveryObtions.js';
+import {renderPaymentSummary} from './paymentSummary.js';
 
-
-hello();
-
-const today = dayjs();
-const deliverydate = today.add(7, 'day');
-// Format the date to be in the format of "dddd, MMMM D"
-console.log(deliverydate.format('dddd, MMMM D'));
 
 
 // This function generates the HTML for the order summary, including product details, delivery options, and quantity.
@@ -132,6 +126,8 @@ export function renderOrderSummury(){
 
         const container = document.querySelector(`.js-card-item-container-${productId}`);
         container.remove();
+
+        renderPaymentSummary();
       });
     });
 
@@ -142,6 +138,7 @@ export function renderOrderSummury(){
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
         renderOrderSummury();
+        renderPaymentSummary();
       });
     });
 };
