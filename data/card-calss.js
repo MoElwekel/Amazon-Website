@@ -1,15 +1,15 @@
 class Card {
   cardItems ;
-  localStorageKey ;
+  #localStorageKey ;
 
 
   constructor(localStorageKey) {
-    this.localStorageKey = localStorageKey;
-    this.loadFromStorage();
+    this.#localStorageKey = localStorageKey;
+    this.#loadFromStorage();
   }
 
-  loadFromStorage(){
-    this.cardItems = JSON.parse(localStorage.getItem(this.localStorageKey))|| [{
+  #loadFromStorage(){
+    this.cardItems = JSON.parse(localStorage.getItem(this.#localStorageKey))|| [{
       productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
       quantity: 2,
       deliveryOptionId: '1'
@@ -22,7 +22,7 @@ class Card {
 
 
   saveToStorage() {
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cardItems));
+    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cardItems));
   }
 
   addToCart(productId) {
@@ -81,6 +81,8 @@ class Card {
 
 const card = new Card('card-oop');
 const businessCard =new Card('business-card');
+
+
 
 
 
