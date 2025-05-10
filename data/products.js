@@ -3,21 +3,20 @@ import { formatCurrency } from "../scrips/utils/money.js";
 
 
 
+// Function to get the product by ID
 export function getProduct(productId){
   let matchingProduct;
     
-    // Find the matching product in the products array
-    products.forEach((product) => {
-      if (product.id === productId) {
+  // Find the matching product in the products array
+  products.forEach((product) => {
+    if (product.id === productId) {
         matchingProduct = product;
-      }
-    });
-
-
-    return matchingProduct;
+    }
+  });
+  return matchingProduct;
 };
 
-
+// parent class for products
 class Product{
   id;
   image;
@@ -33,7 +32,6 @@ class Product{
     this.priceCents = prouductDetails.priceCents;
   }
 
-
   getStarsUrl(){
     return `images/ratings/rating-${this.rating.stars*10}.png`;
   }
@@ -43,8 +41,34 @@ class Product{
 
   }
 
-}
+  extraInfoHTML(){
+    return ``;
+  }
 
+};
+
+///////////*Inheritance*///////////////
+// child class for clothing products
+class Clothing extends Product{
+
+  sizeChartLink;
+
+  constructor(prouductDetails){
+    //taking the properties from the parent class
+    super(prouductDetails);
+    // add the properties you want
+    this.sizeChartLink = prouductDetails.sizeChartLink;
+  }
+
+  extraInfoHTML(){
+    return `
+    <a href="${this.sizeChartLink}" target="_blank">
+      Size Chart
+    </a>
+    `;
+  }
+
+};
 
 
 export const products = [
@@ -707,6 +731,9 @@ export const products = [
     ]
   }
 ].map((prouductDetails) => {
+  if (prouductDetails.type === "clothing") {
+    return new Clothing (prouductDetails);
+  }
   return new Product (prouductDetails);
 });
 
