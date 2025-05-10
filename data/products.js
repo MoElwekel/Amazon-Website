@@ -5,8 +5,7 @@ import { formatCurrency } from "../scrips/utils/money.js";
 
 // Function to get the product by ID
 export function getProduct(productId){
-  let matchingProduct;
-    
+  let matchingProduct;  
   // Find the matching product in the products array
   products.forEach((product) => {
     if (product.id === productId) {
@@ -70,6 +69,9 @@ class Clothing extends Product{
 
 };
 
+// const date = new Date ();
+// console.log(date);
+// console.log(date.toLocaleTimeString()); 
 
 export const products = [
   {
