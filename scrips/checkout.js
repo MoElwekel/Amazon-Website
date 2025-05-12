@@ -1,6 +1,6 @@
 import {renderOrderSummury} from './checkout/orderSummary.js';
 import {renderPaymentSummary} from './checkout/paymentSummary.js';
-import {loadProducts} from '../data/products.js';
+import {loadProductsFetch} from '../data/products.js';
 import {loadCard} from '../data/card.js'
 //import '../data/card-calss.js';
 //import '../data/backend-pactice.js';
@@ -9,14 +9,7 @@ import {loadCard} from '../data/card.js'
 
 
 Promise.all([
-  new Promise((resolve)=>{
-    console.log('start promise')
-    loadProducts(()=>{
-      console.log('finish loading the prouducts')
-      resolve('val1');
-    });
-  }),
-
+  loadProductsFetch(),
   new Promise((resolve)=>{
     loadCard(()=>{
       console.log('finish loading the card');
