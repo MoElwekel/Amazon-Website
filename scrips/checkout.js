@@ -5,9 +5,25 @@ import {loadCard} from '../data/card.js'
 //import '../data/card-calss.js';
 //import '../data/backend-pactice.js';
 
+async function loadPage(){
+  console.log('load page');
+  await loadProductsFetch();  
 
+  const value = await new Promise((resolve)=>{
+    loadCard(()=>{
+      console.log('finish loading the card');
+      resolve('value3');
+    });
+  })
 
+  //Initial call to render the order summary
+  renderOrderSummury();
 
+  // Initial call to render the payment summary
+  renderPaymentSummary();
+}
+loadPage();
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve)=>{
@@ -24,7 +40,7 @@ Promise.all([
   // Initial call to render the payment summary
   renderPaymentSummary();
 });
-
+*/
 /*
 new Promise((resolve)=>{
   console.log('start promise')
