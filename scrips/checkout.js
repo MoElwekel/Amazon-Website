@@ -1,20 +1,28 @@
 import {renderOrderSummury} from './checkout/orderSummary.js';
 import {renderPaymentSummary} from './checkout/paymentSummary.js';
-import {loadProductsFetch} from '../data/products.js';
+import {loadProducts ,loadProductsFetch} from '../data/products.js';
 import {loadCard} from '../data/card.js'
 //import '../data/card-calss.js';
 //import '../data/backend-pactice.js';
 
 async function loadPage(){
-  console.log('load page');
-  await loadProductsFetch();  
+  try {
+    // throw 'error1';
+    console.log('load page');
+    await loadProductsFetch();  
 
-  const value = await new Promise((resolve)=>{
-    loadCard(()=>{
-      console.log('finish loading the card');
-      resolve('value3');
+    const value = await new Promise((resolve,reject)=>{
+      // throw 'error2';
+      loadCard(()=>{
+        //reject('error3');
+        console.log('finish loading the card');
+        resolve('value3');
+      });
     });
-  })
+
+  }catch (error){
+    console.error('Unexpected error');
+  }
 
   //Initial call to render the order summary
   renderOrderSummury();
