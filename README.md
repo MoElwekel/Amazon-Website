@@ -1,4 +1,4 @@
-![2](https://github.com/user-attachments/assets/7f736aee-98ca-4d4c-ba8b-4cfadadbb3a4)# 🛒 Amazon-Website
+# 🛒 Amazon-Website
 
 **Amazon-Website** is a frontend project that mimics the design and layout of the popular Amazon website. It was developed using core web technologies: **HTML**, **CSS**, and **JavaScript**, and features a well-structured file system for scalability and maintainability.
 
@@ -58,6 +58,15 @@ Amazon-Website/
 - **HTML5** – Page structure
 - **CSS3** – Styling and layout
 - **JavaScript** – Basic interactivity
+
+---
+
+## 📷 Screenshots
+
+![3](https://github.com/user-attachments/assets/43f03ef4-8058-4517-a58c-627f5af06b6c)
+![1](https://github.com/user-attachments/assets/804e15ba-f586-48a2-8144-896d77d96ec2)
+![2](https://github.com/user-attachments/assets/6ad11305-9694-47b2-b6e9-176d5a3a40e1)
+
 
 ---
 
