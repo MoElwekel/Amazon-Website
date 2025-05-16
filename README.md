@@ -63,10 +63,12 @@ Amazon-Website/
 
 ## 📷 Screenshots
 
-![3](https://github.com/user-attachments/assets/43f03ef4-8058-4517-a58c-627f5af06b6c)
+### 🏠 Homepage
 ![1](https://github.com/user-attachments/assets/804e15ba-f586-48a2-8144-896d77d96ec2)
+### 🛒 Checkout Page
 ![2](https://github.com/user-attachments/assets/6ad11305-9694-47b2-b6e9-176d5a3a40e1)
-
+### 📦 Orders Page
+![3](https://github.com/user-attachments/assets/43f03ef4-8058-4517-a58c-627f5af06b6c)
 
 ---
 
