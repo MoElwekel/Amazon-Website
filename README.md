@@ -81,7 +81,7 @@ Amazon-Website/
 
 ## 👨‍💻 Author
 
-- **Name**: MoElwekel  
+- **Name**: Mohamed Adel Elwekel  
 - **GitHub**: [MoElwekel](https://github.com/MoElwekel)
 
 ---
