@@ -4,13 +4,6 @@
 
 ---
 
-## 🧱 Project Base / Credits
-
-This project is based on the [JavaScript Amazon Project](https://github.com/SuperSimpleDev/javascript-amazon-project) by **SuperSimpleDev**, which provided the starting code and structure.  
-I have built upon it by customizing and expanding features, layout, and file organization for learning purposes.
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -83,6 +76,13 @@ Amazon-Website/
 
 - This is an educational project and is not a real Amazon clone.
 - No actual login or payment functionality exists; all data is static and simulated.
+
+---
+
+## 🧱 Project Base / Credits
+
+This project is based on the [JavaScript Amazon Project](https://github.com/SuperSimpleDev/javascript-amazon-project) by **SuperSimpleDev**, which provided the starting code and structure.  
+I have built upon it by customizing and expanding features, layout, and file organization for learning purposes.
 
 ---
 
